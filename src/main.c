@@ -1,7 +1,22 @@
 #include <stdint.h>
 #include <stdio.h>
 #define IMAGE_PATH "dog.jpeg"
-#define File_size_offset_webp 32 
+typedef struct {
+  uint32_t RIFF;
+  uint32_t File_size;
+  uint32_t WEBP;
+  uint32_t VP8X;
+  uint32_t Chunk_size;
+  uint32_t Flags_0;
+  uint32_t Flags_1;
+  uint32_t ALPH;
+  uint32_t Alpha_Stream_Payload_Size;
+  uint32_t Compressed_Alpha_Data;
+  uint32_t VP8 ;
+  uint32_t VP8_Bitsream_Payload_Size;
+  uint32_t RAW_VP8_Video_Frame;
+  uint32_t EXIF;
+}WEBP;
 
 void print_array(unsigned char *data,size_t size){
   printf("\n[%02x",data[0]);
